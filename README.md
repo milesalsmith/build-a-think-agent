@@ -7,7 +7,8 @@ You start with a tiny working agent and, together, grow it into one that
 **remembers across sessions** and **writes & runs its own code in a sandbox** —
 Tiers 0 and 1 of the Project Think "execution ladder".
 
-The build script is in **[`WORKSHOP.md`](./WORKSHOP.md)**.
+The step-by-step build guide is in **[`Instructions.md`](./Instructions.md)** —
+follow it live with the presenter, or at your own pace.
 
 ---
 
@@ -54,4 +55,4 @@ the build setup:
 - **Tier 0:** give the agent a personality and persistent memory
 - **Tier 1:** give it an `execute` tool so it writes and runs code in a sandbox
 
-Follow **[`WORKSHOP.md`](./WORKSHOP.md)**.
+Follow **[`Instructions.md`](./Instructions.md)**.

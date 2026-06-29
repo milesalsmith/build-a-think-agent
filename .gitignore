@@ -4,3 +4,6 @@ dist
 .dev.vars
 .DS_Store
 *.log
+
+# Facilitator-only teleprompter — kept locally, never shipped to attendees.
+WORKSHOP.md
