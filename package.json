@@ -5,6 +5,7 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
+    "check": "node scripts/setup-check.mjs",
     "dev": "vite dev",
     "build": "vite build",
     "deploy": "vite build && wrangler deploy",

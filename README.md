@@ -29,7 +29,13 @@ cd build-a-think-agent
 npm install
 ```
 
-**4. Confirm it runs:**
+**4. Check your setup** (Node + deps + Wrangler login in one command):
+```bash
+npm run check
+```
+Fix anything flagged with ❌, then re-run until you see 🎉.
+
+**5. Confirm it runs:**
 ```bash
 npm run dev              # → http://localhost:5173
 ```
