@@ -14,29 +14,22 @@ follow it live with the presenter, or at your own pace.
 
 ## Setup (do this before the workshop)
 
-**1. You need Node 20+ and a Cloudflare account.**
+**1. You need, before anything else:**
+- **Node 20+** (`node --version`)
+- A **Cloudflare account** (free is fine) — https://dash.cloudflare.com/sign-up
+- An **AI coding assistant** in your editor (Cursor, Copilot, Claude…) — it's a vibe-coding lab
 
 **2. Log into Wrangler** (required — Workers AI runs remotely):
 ```bash
 npx wrangler login
-npx wrangler whoami      # should show your account, no error
+npx wrangler whoami      # should print your email + account, no error
 ```
 
-**3. Clone and install:**
+**3. Clone, install, and run:**
 ```bash
 git clone https://github.com/milesalsmith/build-a-think-agent.git
 cd build-a-think-agent
 npm install
-```
-
-**4. Check your setup** (Node + deps + Wrangler login in one command):
-```bash
-npm run check
-```
-Fix anything flagged with ❌, then re-run until you see 🎉.
-
-**5. Confirm it runs:**
-```bash
 npm run dev              # → http://localhost:5173
 ```
 Open the URL, say "hello", and you should get a reply. That's the starting

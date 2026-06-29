@@ -51,29 +51,25 @@ that prompt and it'll make the right edit. If it drifts, paste your current
 
 ## Part 0 — Setup (5 min)
 
-**1. Prereqs:** Node 20+ and a Cloudflare account.
+> ✅ **Do this BEFORE the session if you can** — setup is the one thing that
+> eats time live.
 
-**2. Log into Wrangler** (Workers AI runs remotely, so this is required):
-```bash
-npx wrangler login
-npx wrangler whoami      # should show your account, no error
-```
+**You need four things in place first:**
 
-**3. Clone & install:**
+1. **Node 20+** — verify: `node --version` (should print v20 or higher)
+2. **A Cloudflare account** (free is fine) — sign up: https://dash.cloudflare.com/sign-up
+3. **An AI coding assistant** in your editor (Cursor, Copilot, Claude, ChatGPT…) — this is a vibe-coding lab
+4. **Wrangler logged in** — Workers AI runs remotely, so this is required:
+   ```bash
+   npx wrangler login
+   npx wrangler whoami     # ✅ should print your email + account, no error
+   ```
+
+**Then clone, install, and run:**
 ```bash
 git clone https://github.com/milesalsmith/build-a-think-agent.git
 cd build-a-think-agent
 npm install
-```
-
-**4. Check your setup** (verifies Node, deps, and Wrangler login in one go):
-```bash
-npm run check
-```
-Fix anything it flags with ❌, then re-run it until you get 🎉.
-
-**5. Run it:**
-```bash
 npm run dev              # → http://localhost:5173
 ```
 
