@@ -178,6 +178,11 @@ The `worker_loaders` binding is new, so **restart** the dev server:
 npm run dev
 ```
 
+> 💡 **Expected hiccup:** the first restart after adding the new imports may
+> fail with a Vite *"optimize deps / file does not exist in the optimize deps
+> directory"* error. This is harmless — Vite is just re-caching the new
+> packages. **Just run `npm run dev` again** and it'll boot cleanly.
+
 In the browser, paste:
 ```
 Use your execute tool to create 10 notes in /numbers/ named 1.md through
@@ -208,6 +213,7 @@ show `MyAgent`, `AI`, and `LOADER`.
 |---------|-----|
 | `npm run dev` won't boot ("must be logged in / remote proxy") | `npx wrangler login`, then retry. Workers AI is remote. |
 | Edits to `wrangler.jsonc` not taking effect | Stop and **restart** `npm run dev` — bindings load at boot. |
+| First restart errors with Vite "optimize deps / file does not exist" | Harmless dep re-cache. **Run `npm run dev` again** — second boot works. |
 | Agent ignores the execute tool on simple tasks | Start your prompt with **"Use ONLY your execute tool."** |
 | TypeScript errors mid-step | Expected until a step is finished — complete the step, then check. Run `npm run typecheck`. |
 | Totally lost | Copy `solution/server.ts` → `src/server.ts`, restart `npm run dev`. |
