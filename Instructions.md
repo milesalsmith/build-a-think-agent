@@ -16,6 +16,38 @@ check your work.
 
 ---
 
+## 🤖 Vibe-coding with your AI assistant
+
+**`src/server.ts` is the only file you write code in** throughout this workshop.
+The other two edits (`wrangler.jsonc` and `env.d.ts`) are just uncomment one line
+each — no AI needed.
+
+For the best results with your AI assistant (Cursor, Copilot, Claude, ChatGPT,
+etc.), **paste this context block once at the start of your session**, before
+your first prompt:
+
+```
+I'm building a Cloudflare Project Think agent in a file called src/server.ts.
+Here is my current file:
+
+[paste src/server.ts here]
+
+Think is a Cloudflare agent base class. The class extends Think<Env>.
+- getModel() returns the language model
+- configureSession(session) adds context blocks (soul + memory)
+- getTools() returns tools (including a sandboxed code executor)
+
+Only edit src/server.ts. Do not change imports unless I ask. Keep all
+existing code intact and only add what I request.
+```
+
+Then for each step, use the 🤖 **VIBE** prompt in the instructions below. Your
+AI already has the file and the context — just paste the VIBE prompt and it'll
+make the right edit. If it drifts, paste your current `src/server.ts` again to
+re-anchor it.
+
+---
+
 ## Part 0 — Setup (5 min)
 
 **1. Prereqs:** Node 20+ and a Cloudflare account.
