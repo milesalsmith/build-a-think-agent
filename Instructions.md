@@ -5,14 +5,15 @@ here — every step has **what to do**, a **prompt you can give your AI assistan
 (this is a vibe-coding lab!), and the **exact code** if you'd rather paste it or
 check your work.
 
-> 🧠 **The goal:** start from a tiny 3-line agent and grow it into one that
-> **remembers across sessions** (Tier 0) and **writes & runs its own code in a
-> sandbox** (Tier 1).
+> 🧠 **The goal:** start from a tiny starter agent (one class, one method) and
+> grow it into one that **remembers across sessions** (Tier 0) and **writes &
+> runs its own code in a sandbox** (Tier 1).
 >
 > 🆘 **Stuck at any point?** Copy `solution/server.ts` over your `src/server.ts`,
-> restart, and you're caught up. Or paste the error into your AI assistant with:
-> *"I'm building a Cloudflare Project Think agent. Here's my error: <paste>.
-> Here's my src/server.ts: <paste>. What's wrong?"*
+> do the two one-line binding edits from Step 2.1, then restart — you're caught
+> up. Or paste the error into your AI assistant with: *"I'm building a Cloudflare
+> Project Think agent. Here's my error: <paste>. Here's my src/server.ts:
+> <paste>. What's wrong?"*
 
 ---
 
@@ -41,10 +42,10 @@ Only edit src/server.ts. Do not change imports unless I ask. Keep all
 existing code intact and only add what I request.
 ```
 
-Then for each step, use the 🤖 **VIBE** prompt in the instructions below. Your
-AI already has the file and the context — just paste the VIBE prompt and it'll
-make the right edit. If it drifts, paste your current `src/server.ts` again to
-re-anchor it.
+Then for each step, use the 🤖 **Ask your AI assistant** prompt in the
+instructions below. Your AI already has the file and the context — just paste
+that prompt and it'll make the right edit. If it drifts, paste your current
+`src/server.ts` again to re-anchor it.
 
 ---
 
@@ -71,8 +72,9 @@ npm run dev              # → http://localhost:5173
 ```
 
 Open the URL and say "hello". You should get a reply. ✅ **That's the starting
-agent** — open `src/server.ts` and you'll see it's about 15 lines. `Think` gives
-us streaming, persistence, and a filesystem for free. Now let's give it a brain.
+agent** — open `src/server.ts`: the agent is just a class with a single
+`getModel()` method. `Think` gives us streaming, persistence, and a filesystem
+for free. Now let's give it a brain.
 
 ---
 
@@ -108,7 +110,8 @@ user (preferences, projects, names), call set_context to update it.`;
 🤖 **Ask your AI assistant:**
 > "Add a `configureSession(session)` method to my Think agent that registers a
 > read-only 'soul' context block from the SOUL constant, and a writable 'memory'
-> context block (maxTokens 2000), then calls withCachedPrompt()."
+> context block (maxTokens 2000), then calls withCachedPrompt(). Also add a
+> `type Session` import from @cloudflare/think."
 
 📋 **Or paste this:**
 ```typescript
@@ -248,7 +251,7 @@ show `MyAgent`, `AI`, and `LOADER`.
 | First restart errors with Vite "optimize deps / file does not exist" | Harmless dep re-cache. **Run `npm run dev` again** — second boot works. |
 | Agent ignores the execute tool on simple tasks | Start your prompt with **"Use ONLY your execute tool."** |
 | TypeScript errors mid-step | Expected until a step is finished — complete the step, then check. Run `npm run typecheck`. |
-| Totally lost | Copy `solution/server.ts` → `src/server.ts`, restart `npm run dev`. |
+| Totally lost | Copy `solution/server.ts` → `src/server.ts`, do the Step 2.1 binding edits, restart `npm run dev`. |
 | Any error you don't understand | Paste it into your AI assistant with your `src/server.ts` and ask "what's wrong?" |
 
 ---
