@@ -73,6 +73,13 @@ npm install
 npm run dev              # → http://localhost:5173
 ```
 
+> 💡 **If `npm run dev` errors with "Cannot find native binding"** — that's a
+> known npm bug with optional dependencies. Fix it with a clean reinstall:
+> ```bash
+> rm -rf node_modules package-lock.json && npm install
+> ```
+> Then `npm run dev` again.
+
 Open the URL and say "hello". You should get a reply. ✅ **That's the starting
 agent** — open `src/server.ts`: the agent is just a class with a single
 `getModel()` method. `Think` gives us streaming, persistence, and a filesystem
@@ -249,6 +256,7 @@ show `MyAgent`, `AI`, and `LOADER`.
 | Problem | Fix |
 |---------|-----|
 | `npm run dev` won't boot ("must be logged in / remote proxy") | `npx wrangler login`, then retry. Workers AI is remote. |
+| `npm run dev` errors: "Cannot find native binding" | npm optional-deps bug. Run `rm -rf node_modules package-lock.json && npm install`, then retry. |
 | Edits to `wrangler.jsonc` not taking effect | Stop and **restart** `npm run dev` — bindings load at boot. |
 | First restart errors with Vite "optimize deps / file does not exist" | Harmless dep re-cache. **Run `npm run dev` again** — second boot works. |
 | Agent ignores the execute tool on simple tasks | Start your prompt with **"Use ONLY your execute tool."** |
